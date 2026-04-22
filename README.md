@@ -1,138 +1,167 @@
-# Logistic Regression from Scratch (NumPy + Matplotlib)
+# 🚀 Logistic Regression from Scratch (NumPy)
 
-A complete **from-scratch implementation of Logistic Regression** using only **NumPy** and **Matplotlib**, without any machine learning libraries like scikit-learn.
+<p align="center">
+  <img src="https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" width="250"/>
+</p>
 
-This project is built to help understand the **mathematics, intuition, and training process** behind logistic regression.
+<p align="center">
+  <b>Pure NumPy implementation of Logistic Regression</b><br>
+  Built to deeply understand ML math, optimization, and learning mechanics
+</p>
+
+---
+
+
+<p align="center">
+
+![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
+![NumPy](https://img.shields.io/badge/NumPy-Linear%20Algebra-orange)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-blueviolet)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+![ML](https://img.shields.io/badge/Machine%20Learning-From%20Scratch-purple)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
+</p>
 
 ---
 
 ## 📌 Project Preview
 
-### 📈 Sigmoid Curve
+| Sigmoid Curve | Training Loss |
+|--------------|--------------|
+| ![Sigmoid Curve](Sigmoid%20Curve.png) | ![Training Loss](Training%20Loss.png) |
 
-![Sigmoid Curve](Sigmoid%20Curve.png)
+---
 
-### 📉 Training Loss
+## 🧠 Project Goal
 
-![Training Loss](Training%20Loss.png)
+This project implements **Logistic Regression from scratch** to understand:
+
+- How models learn from data
+- How gradient descent optimizes parameters
+- How probabilities are computed
+- How decision boundaries are formed
+
+---
+
+## 🏗️ Architecture Overview
+
+### 🔹 Model Pipeline
+
+```
+
+Input Features (X)
+↓
+Linear Transformation (Xw + b)
+↓
+Sigmoid Activation
+↓
+Predicted Probability (ŷ)
+↓
+Cross-Entropy Loss
+↓
+Gradient Descent Updates
+↓
+Optimized Weights (w, b)
+
+````
+
+---
+
+## 🧠 Mathematical Flow
+
+### 🔹 Linear Model
+
+$$
+z = Xw + b
+$$
+
+---
+
+### 🔹 Sigmoid Function
+
+$$
+\hat{y} = \frac{1}{1 + e^{-z}}
+$$
+
+---
+
+### 🔹 Loss Function (Cross Entropy)
+
+$$
+L = -\frac{1}{m} \sum \left[y \log(\hat{y}) + (1 - y)\log(1 - \hat{y})\right]
+$$
+
+---
+
+### 🔹 Gradient Descent Updates
+
+$$
+w = w - \alpha \frac{1}{m} X^T(\hat{y} - y)
+$$
+
+$$
+b = b - \alpha \frac{1}{m} \sum (\hat{y} - y)
+$$
 
 ---
 
 ## 📁 Project Structure
 
-```bash id="x7k2lq"
-Logistic-Regression-Form-Scratch/
-┣ main.py
-┣ README.md
-┣ Sigmoid Curve.png
-┗ Training Loss.png
-```
+```bash
+Logistic-Regression-From-Scratch/
+├── main.py
+├── README.md
+├── Sigmoid Curve.png
+└── Training Loss.png
+````
 
 ---
 
 ## 🚀 Features
 
 * Logistic Regression from scratch
-* Binary classification (0 / 1)
+* Multi-feature input support
 * Sigmoid activation function
-* Cross-entropy loss function
+* Cross-entropy loss
 * Gradient descent optimization
 * Probability predictions
-* Class predictions
-* Visualization of decision curve
-* Training loss tracking
-
----
-
-## 🧠 What is Logistic Regression?
-
-Logistic Regression is a supervised learning algorithm used for **binary classification problems**.
-
-Examples:
-
-* Pass / Fail
-* Spam / Not Spam
-* Disease / No Disease
-* Fraud / Not Fraud
-
-It predicts probabilities between 0 and 1 using a sigmoid function.
-
----
-
-## 📘 Mathematical Foundation
-
-### 🔹 Hypothesis (Sigmoid Function)
-
-\hat y = \frac{1}{1 + e^{-(wx + b)}}
-
-Where:
-
-* w = weight
-* b = bias
-* x = input feature
-
----
-
-### 🔹 Cost Function (Cross Entropy Loss)
-
-L = -\frac{1}{m}\sum \left[y\log(\hat y) + (1-y)\log(1-\hat y)\right]
-
----
-
-### 🔹 Gradient Descent Updates
-
-```markdown id="g7p2kq"
-w = w - α (∂L / ∂w)
-b = b - α (∂L / ∂b)
-```
-
-Rendered version:
-
-w = w - \alpha \frac{\partial L}{\partial w}
-
-b = b - \alpha \frac{\partial L}{\partial b}
+* Class predictions (0/1)
+* Training loss visualization
+* Decision boundary visualization
 
 ---
 
 ## 📊 Dataset Example
 
-```python id="k2m8qv"
-X = [1,2,3,4,5,6,7]
-y = [0,0,0,0,1,1,1]
-```
+```python
+X = [
+    [2, 7],
+    [3, 6],
+    [4, 6],
+    [5, 5],
+    [6, 4],
+    [7, 3]
+]
 
-| Study Hours | Output   |
-| ----------- | -------- |
-| 1           | 0 (Fail) |
-| 2           | 0 (Fail) |
-| 3           | 0 (Fail) |
-| 4           | 0 (Fail) |
-| 5           | 1 (Pass) |
-| 6           | 1 (Pass) |
-| 7           | 1 (Pass) |
+y = [0, 0, 0, 1, 1, 1]
+```
 
 ---
 
-## ⚙️ Installation
+## ▶️ Installation
 
-Clone the repository:
-
-```bash id="p9x0ab"
-git clone https://github.com/maroofiums/Logistic-Regression-Form-Scratch.git
-cd Logistic-Regression-Form-Scratch
-```
-
-Install dependencies:
-
-```bash id="z1v8mq"
+```bash
+git clone https://github.com/yourusername/logistic-regression-from-scratch.git
+cd logistic-regression-from-scratch
 pip install numpy matplotlib
 ```
 
 ---
 
-## ▶️ Run the Project
+## ▶️ Run Project
 
-```bash id="t4n6wp"
+```bash
 python main.py
 ```
 
@@ -140,92 +169,85 @@ python main.py
 
 ## ▶️ Usage Example
 
-```python id="v2m8xq"
+```python
 from main import LogisticRegression
-
-X = [1,2,3,4,5,6,7]
-y = [0,0,0,0,1,1,1]
 
 model = LogisticRegression(learning_rate=0.1, epochs=2000)
 
 model.fit(X, y)
 
-print(model.predict([2]))  # [0]
-print(model.predict([6]))  # [1]
-print(model.predict_proba([4]))
+print(model.predict([[4, 6]]))
+print(model.predict_proba([[4, 6]]))
 ```
 
 ---
 
-## 📈 Visualizations
+## 📈 Output Example
 
-### 🔹 Sigmoid Curve
+```
+Epoch 0   | Loss: 0.6931
+Epoch 100 | Loss: 0.4212
+Epoch 200 | Loss: 0.3124
+Epoch 300 | Loss: 0.2451
+```
+
+---
+
+## 📊 Visualizations
+
+### 🔹 Sigmoid Decision Curve
 
 ![Sigmoid Curve](Sigmoid%20Curve.png)
 
 Shows:
 
-* Training data points
-* Learned S-shaped probability curve
-* Decision threshold at 0.5
+* Data distribution
+* Learned decision boundary
+* Probability curve
 
 ---
 
-### 🔹 Training Loss
+### 🔹 Training Loss Curve
 
 ![Training Loss](Training%20Loss.png)
 
 Shows:
 
-* Loss decreasing over epochs
-* Convergence of gradient descent
-* Model learning progress
+* Loss decreasing over time
+* Gradient descent convergence
+* Learning stability
 
 ---
 
-## 📌 Model Methods
+## ⚙️ Core Methods
 
-### `fit(X, y)`
-
-Trains the model using gradient descent.
-
-### `predict(X)`
-
-Returns binary predictions (0 or 1).
-
-### `predict_proba(X)`
-
-Returns probability values between 0 and 1.
-
-### `plot_sigmoid(X, y)`
-
-Plots decision curve.
-
-### `plot_loss()`
-
-Plots training loss curve.
+| Method            | Description                        |
+| ----------------- | ---------------------------------- |
+| `fit()`           | Train model using gradient descent |
+| `predict()`       | Predict class labels (0/1)         |
+| `predict_proba()` | Predict probabilities              |
+| `compute_loss()`  | Cross-entropy loss                 |
+| `plot_loss()`     | Visualize training loss            |
 
 ---
 
-## 🎯 Why Build This From Scratch?
+## 🧠 Key Learnings
 
-Building ML models from scratch helps you understand:
-
-* How learning actually happens
-* Why loss decreases
-* What gradients really do
-* How models make decisions
-* The math behind predictions
+* Logistic regression intuition
+* Gradient descent mechanics
+* Role of sigmoid function
+* Loss minimization process
+* Vectorized NumPy operations
 
 ---
 
-## 🔥 Possible Improvements
+## 🔥 Future Improvements
 
-* Multi-feature logistic regression
-* Accuracy score function
+* Train/test split
+* Feature scaling (standardization)
 * Confusion matrix
-* Precision / recall metrics
-* L1 / L2 regularization
+* Precision / Recall / F1-score
+* L2 regularization
 * Softmax regression (multi-class)
 * Mini-batch gradient descent
 
@@ -241,21 +263,22 @@ Building ML models from scratch helps you understand:
 
 ## 👨‍💻 Author
 
-Built from scratch with curiosity and consistency.
+Built from scratch to master machine learning fundamentals.
 
 ---
 
 ## ⭐ Support
 
-If you like this project:
+If this helped you:
 
-* ⭐ Star the repo
-* 🍴 Fork it
-* 🧠 Learn from it
-* 🔁 Share it
+⭐ Star the repo
+🍴 Fork it
+📚 Learn from it
+🚀 Build your own version
 
 ---
 
 ## 📜 License
 
-This project is open-source and free to use.
+MIT License - Free to use and modify
+
